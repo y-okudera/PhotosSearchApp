@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		FC91FF9D254DB60F001D643B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC91FF9C254DB60F001D643B /* AppDelegate.swift */; };
 		FC91FF9F254DB60F001D643B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC91FF9E254DB60F001D643B /* SceneDelegate.swift */; };
-		FC91FFA1254DB60F001D643B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC91FFA0254DB60F001D643B /* ViewController.swift */; };
-		FC91FFA4254DB60F001D643B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC91FFA2254DB60F001D643B /* Main.storyboard */; };
+		FC91FFA1254DB60F001D643B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC91FFA0254DB60F001D643B /* SearchViewController.swift */; };
 		FC91FFA6254DB610001D643B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC91FFA5254DB610001D643B /* Assets.xcassets */; };
-		FC91FFA9254DB610001D643B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC91FFA7254DB610001D643B /* LaunchScreen.storyboard */; };
 		FC91FFB4254DB611001D643B /* PhotosSearchAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC91FFB3254DB611001D643B /* PhotosSearchAppTests.swift */; };
 		FC91FFBF254DB611001D643B /* PhotosSearchAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC91FFBE254DB611001D643B /* PhotosSearchAppUITests.swift */; };
+		FC91FFF5254DBAAE001D643B /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC91FFF4254DBAAE001D643B /* SearchViewController.storyboard */; };
+		FC91FFFD254DBABC001D643B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC91FFFC254DBABC001D643B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +38,8 @@
 		FC91FF99254DB60F001D643B /* PhotosSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC91FF9C254DB60F001D643B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC91FF9E254DB60F001D643B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FC91FFA0254DB60F001D643B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FC91FFA3254DB60F001D643B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FC91FFA0254DB60F001D643B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FC91FFA5254DB610001D643B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FC91FFA8254DB610001D643B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC91FFAA254DB610001D643B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC91FFAF254DB611001D643B /* PhotosSearchAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosSearchAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC91FFB3254DB611001D643B /* PhotosSearchAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosSearchAppTests.swift; sourceTree = "<group>"; };
@@ -49,6 +47,8 @@
 		FC91FFBA254DB611001D643B /* PhotosSearchAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosSearchAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC91FFBE254DB611001D643B /* PhotosSearchAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosSearchAppUITests.swift; sourceTree = "<group>"; };
 		FC91FFC0254DB611001D643B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC91FFF4254DBAAE001D643B /* SearchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
+		FC91FFFC254DBABC001D643B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +99,10 @@
 		FC91FF9B254DB60F001D643B /* PhotosSearchApp */ = {
 			isa = PBXGroup;
 			children = (
-				FC91FF9C254DB60F001D643B /* AppDelegate.swift */,
-				FC91FF9E254DB60F001D643B /* SceneDelegate.swift */,
-				FC91FFA0254DB60F001D643B /* ViewController.swift */,
-				FC91FFA2254DB60F001D643B /* Main.storyboard */,
-				FC91FFA5254DB610001D643B /* Assets.xcassets */,
-				FC91FFA7254DB610001D643B /* LaunchScreen.storyboard */,
-				FC91FFAA254DB610001D643B /* Info.plist */,
+				FC91FFD5254DB72A001D643B /* Data */,
+				FC91FFD4254DB723001D643B /* Domain */,
+				FC91FFD3254DB719001D643B /* Presentation */,
+				FC91FFCF254DB6AC001D643B /* Application */,
 			);
 			path = PhotosSearchApp;
 			sourceTree = "<group>";
@@ -126,6 +123,113 @@
 				FC91FFC0254DB611001D643B /* Info.plist */,
 			);
 			path = PhotosSearchAppUITests;
+			sourceTree = "<group>";
+		};
+		FC91FFCF254DB6AC001D643B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FC91FF9C254DB60F001D643B /* AppDelegate.swift */,
+				FC91FFAA254DB610001D643B /* Info.plist */,
+				FC91FFFC254DBABC001D643B /* LaunchScreen.storyboard */,
+				FC91FF9E254DB60F001D643B /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FC91FFD3254DB719001D643B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				FC91FFE3254DB929001D643B /* Scene */,
+				FC91FFD9254DB79E001D643B /* Resources */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		FC91FFD4254DB723001D643B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				FC91FFE2254DB90E001D643B /* Model */,
+				FC91FFE1254DB909001D643B /* Translator */,
+				FC91FFE0254DB8A4001D643B /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		FC91FFD5254DB72A001D643B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FC91FFDF254DB899001D643B /* Repository */,
+				FC91FFDE254DB88E001D643B /* Entity */,
+				FC91FFDD254DB884001D643B /* DataStore */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FC91FFD9254DB79E001D643B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FC91FFA5254DB610001D643B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FC91FFDD254DB884001D643B /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		FC91FFDE254DB88E001D643B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		FC91FFDF254DB899001D643B /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		FC91FFE0254DB8A4001D643B /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		FC91FFE1254DB909001D643B /* Translator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Translator;
+			sourceTree = "<group>";
+		};
+		FC91FFE2254DB90E001D643B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FC91FFE3254DB929001D643B /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				FC91FFED254DB9EB001D643B /* Search */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		FC91FFED254DB9EB001D643B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FC91FFA0254DB60F001D643B /* SearchViewController.swift */,
+				FC91FFF4254DBAAE001D643B /* SearchViewController.storyboard */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +335,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC91FFA9254DB610001D643B /* LaunchScreen.storyboard in Resources */,
+				FC91FFFD254DBABC001D643B /* LaunchScreen.storyboard in Resources */,
 				FC91FFA6254DB610001D643B /* Assets.xcassets in Resources */,
-				FC91FFA4254DB60F001D643B /* Main.storyboard in Resources */,
+				FC91FFF5254DBAAE001D643B /* SearchViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC91FFA1254DB60F001D643B /* ViewController.swift in Sources */,
+				FC91FFA1254DB60F001D643B /* SearchViewController.swift in Sources */,
 				FC91FF9D254DB60F001D643B /* AppDelegate.swift in Sources */,
 				FC91FF9F254DB60F001D643B /* SceneDelegate.swift in Sources */,
 			);
@@ -294,25 +398,6 @@
 			targetProxy = FC91FFBB254DB611001D643B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		FC91FFA2254DB60F001D643B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC91FFA3254DB60F001D643B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FC91FFA7254DB610001D643B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC91FFA8254DB610001D643B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FC91FFC1254DB611001D643B /* Debug */ = {
@@ -438,7 +523,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8PR34D6DP;
-				INFOPLIST_FILE = PhotosSearchApp/Info.plist;
+				INFOPLIST_FILE = PhotosSearchApp/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +543,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B8PR34D6DP;
-				INFOPLIST_FILE = PhotosSearchApp/Info.plist;
+				INFOPLIST_FILE = PhotosSearchApp/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
