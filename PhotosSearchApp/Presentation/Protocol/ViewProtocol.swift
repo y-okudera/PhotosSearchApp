@@ -10,4 +10,6 @@ import UIKit
 protocol ViewProtocol: UIViewController {
     associatedtype ViewModel = ViewModelProtocol
     var viewModel: ViewModel! { get set }
+    func bindInput()
+    func bindOutput()
 }

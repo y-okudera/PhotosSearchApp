@@ -26,9 +26,9 @@ final class PhotosSearchViewModel: UnioStream<PhotosSearchViewModel>, PhotosSear
     }
 
     struct Input: InputType {
-        let searchWord = PublishRelay<String>()
+        let searchButtonTapped = PublishRelay<String>()
         let reachedBottom = PublishRelay<Void>()
-        let page = PublishRelay<Int>()
+        let selectedPhoto = PublishRelay<PhotosSearchModel.Photo>()
     }
 
     struct Output: OutputType {
@@ -62,7 +62,7 @@ final class PhotosSearchViewModel: UnioStream<PhotosSearchViewModel>, PhotosSear
         let state = dependency.state
         let extra = dependency.extra
 
-        input.searchWord
+        input.searchButtonTapped
             .bind(onNext: { searchWord in
 
                 state.needsScrollingToTop.accept(true)
@@ -77,7 +77,7 @@ final class PhotosSearchViewModel: UnioStream<PhotosSearchViewModel>, PhotosSear
                         state.pages.accept(model.pages)
                         state.page.accept(model.page)
                         state.photos.accept(model.photos)
-                        print("APIリクエスト結果(初回読み込み) pages", model.pages, "page", model.page, "件数", state.photos.value.count)
+                        print("写真検索結果(初回読み込み) pages", model.pages, "page", model.page, "photos", state.photos.value.count)
                     }, onError: { error in
                         state.error.accept(error)
                     })
@@ -97,11 +97,19 @@ final class PhotosSearchViewModel: UnioStream<PhotosSearchViewModel>, PhotosSear
                         state.pages.accept(model.pages)
                         state.page.accept(model.page)
                         state.photos.accept(state.photos.value + model.photos)
-                        print("APIリクエスト結果(追加読み込み) pages", model.pages, "page", model.page, "件数", state.photos.value.count)
+                        print("写真検索結果(追加読み込み) pages", model.pages, "page", model.page, "photos", state.photos.value.count)
                     }, onError: { error in
                         state.error.accept(error)
                     })
                     .disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
+
+        input.selectedPhoto
+            .bind(onNext: { selectedPhoto in
+                extra.wireframe.presentPhotoDetail(photo: selectedPhoto) {
+                    print("PresentPhotoDetail completion")
+                }
             })
             .disposed(by: disposeBag)
 

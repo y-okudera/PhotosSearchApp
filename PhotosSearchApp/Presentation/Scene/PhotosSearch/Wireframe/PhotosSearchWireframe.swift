@@ -14,20 +14,11 @@ enum PhotosSearchWireframeProvider {
     }
 }
 
-protocol PhotosSearchWireframe {
-
-    var viewController: UIViewController? { get set }
-    /* 次の画面へ遷移する処理を実装 */
-//    func pushXXX()
-}
+/// 写真一覧画面から他の画面へ遷移するためのWireframe
+protocol PhotosSearchWireframe: TransitToPhotoDetailWireframe {}
 
 final class PhotosSearchWireframeImpl: PhotosSearchWireframe {
 
     weak var viewController: UIViewController?
-
-//    func pushXXX() {
-//        let nextVC = NextBuilder()
-//        self.viewController?.navigationController?.pushViewController(nextVC, animated: true)
-//    }
 }
 

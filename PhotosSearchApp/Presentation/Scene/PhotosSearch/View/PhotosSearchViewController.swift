@@ -28,12 +28,12 @@ final class PhotosSearchViewController: UIViewController, ViewProtocol, ErrorAle
         self.bindOutput()
     }
 
-    private func bindInput() {
+    func bindInput() {
         self.searchBar.rx.searchButtonClicked
             .map { _ in self.searchBar.text }
             .filterNil()
             .bind(onNext: { [weak self] searchText in
-                self?.viewModel.input.searchWord(searchText)
+                self?.viewModel.input.searchButtonTapped(searchText)
                 self?.searchBar.endEditing(true)
             })
             .disposed(by: self.disposeBag)
@@ -46,7 +46,12 @@ final class PhotosSearchViewController: UIViewController, ViewProtocol, ErrorAle
             .disposed(by: self.disposeBag)
     }
 
-    private func bindOutput() {
+    func bindOutput() {
+
+        self.collectionView.rx.itemSelected
+            .map { self.viewModel.output.photos.value[$0.row] }
+            .bind(to: self.viewModel.input.selectedPhoto)
+            .disposed(by: self.disposeBag)
 
         self.viewModel.output.needsScrollingToTop
             .filter { $0 }
@@ -96,12 +101,6 @@ extension PhotosSearchViewController: UICollectionViewDataSource {
     }
 }
 
-extension PhotosSearchViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("didSelectItemAt", indexPath)
-    }
-}
-
 extension PhotosSearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if self.photos.isEmpty {
@@ -109,5 +108,16 @@ extension PhotosSearchViewController: UICollectionViewDelegateFlowLayout {
         } else {
             return PhotoCollectionViewCell.size(collectionViewWidth: collectionView.bounds.width)
         }
+    }
+}
+
+extension PhotosSearchViewController: UIAdaptivePresentationControllerDelegate {
+
+    func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
+        print("PhotosSearchViewController.presentationControllerWillDismiss")
+    }
+
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        print("PhotosSearchViewController.presentationControllerDidDismiss")
     }
 }
