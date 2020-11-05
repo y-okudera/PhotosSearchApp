@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182941ACBA42BC1D50444082 /* Pods_PhotosSearchApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3EAFEBF683166519D814A2 /* Pods_PhotosSearchApp.framework */; };
+		A4B47A6130D98B9847234819 /* Pods_PhotosSearchApp_PhotosSearchAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE242700171930CF112782B /* Pods_PhotosSearchApp_PhotosSearchAppUITests.framework */; };
+		CB20F4A9AD3E72D87F55B0CA /* Pods_PhotosSearchAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4459C66B3200857BB1B06BDC /* Pods_PhotosSearchAppTests.framework */; };
 		FC142359255194D7008C9CBC /* CellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC142358255194D7008C9CBC /* CellExtension.swift */; };
 		FC14235E255194F2008C9CBC /* ListExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC14235D255194F2008C9CBC /* ListExtension.swift */; };
 		FC1423922551A2EA008C9CBC /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1423912551A2EA008C9CBC /* UIScrollView+Rx.swift */; };
@@ -31,12 +34,12 @@
 		FC77D34625514B3800333695 /* SceneDelegate+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC77D34525514B3800333695 /* SceneDelegate+.swift */; };
 		FC77D3502551533600333695 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC77D34F2551533600333695 /* UIImageView+.swift */; };
 		FC77D3632551874100333695 /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC77D3622551874100333695 /* UIAlertController+.swift */; };
-		FC910009254DC08A001D643B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FC910008254DC08A001D643B /* RxCocoa */; };
-		FC91000B254DC08A001D643B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FC91000A254DC08A001D643B /* RxSwift */; };
-		FC91000D254DC08A001D643B /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = FC91000C254DC08A001D643B /* RxRelay */; };
-		FC910013254DC0AD001D643B /* Unio in Frameworks */ = {isa = PBXBuildFile; productRef = FC910012254DC0AD001D643B /* Unio */; };
-		FC910019254DC0E0001D643B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FC910018254DC0E0001D643B /* Alamofire */; };
-		FC91001F254DC0FB001D643B /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = FC91001E254DC0FB001D643B /* Nuke */; };
+		FC910009254DC08A001D643B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC910008254DC08A001D643B /* SwiftPackageProductDependency */; };
+		FC91000B254DC08A001D643B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC91000A254DC08A001D643B /* SwiftPackageProductDependency */; };
+		FC91000D254DC08A001D643B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC91000C254DC08A001D643B /* SwiftPackageProductDependency */; };
+		FC910013254DC0AD001D643B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC910012254DC0AD001D643B /* SwiftPackageProductDependency */; };
+		FC910019254DC0E0001D643B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC910018254DC0E0001D643B /* SwiftPackageProductDependency */; };
+		FC91001F254DC0FB001D643B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC91001E254DC0FB001D643B /* SwiftPackageProductDependency */; };
 		FC91002F254DC606001D643B /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC91002D254DC606001D643B /* PhotoCollectionViewCell.swift */; };
 		FC910030254DC606001D643B /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC91002E254DC606001D643B /* PhotoCollectionViewCell.xib */; };
 		FC910039254DC80D001D643B /* PhotosSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC910038254DC80D001D643B /* PhotosSearchModel.swift */; };
@@ -80,6 +83,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		125A8D9833529672E838F512 /* Pods-PhotosSearchApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosSearchApp.debug.xcconfig"; path = "Target Support Files/Pods-PhotosSearchApp/Pods-PhotosSearchApp.debug.xcconfig"; sourceTree = "<group>"; };
+		15393303BBA2F63999C10CA1 /* Pods-PhotosSearchApp-PhotosSearchAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosSearchApp-PhotosSearchAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-PhotosSearchApp-PhotosSearchAppUITests/Pods-PhotosSearchApp-PhotosSearchAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3CE242700171930CF112782B /* Pods_PhotosSearchApp_PhotosSearchAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosSearchApp_PhotosSearchAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4459C66B3200857BB1B06BDC /* Pods_PhotosSearchAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosSearchAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C97A56B9A764941E7230CD0 /* Pods-PhotosSearchApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosSearchApp.release.xcconfig"; path = "Target Support Files/Pods-PhotosSearchApp/Pods-PhotosSearchApp.release.xcconfig"; sourceTree = "<group>"; };
+		C66754973B335486720D01C8 /* Pods-PhotosSearchAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosSearchAppTests.debug.xcconfig"; path = "Target Support Files/Pods-PhotosSearchAppTests/Pods-PhotosSearchAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA11EEC234A15F6B647DF193 /* Pods-PhotosSearchApp-PhotosSearchAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosSearchApp-PhotosSearchAppUITests.release.xcconfig"; path = "Target Support Files/Pods-PhotosSearchApp-PhotosSearchAppUITests/Pods-PhotosSearchApp-PhotosSearchAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EBFB348DEF0013C2FDD47F69 /* Pods-PhotosSearchAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosSearchAppTests.release.xcconfig"; path = "Target Support Files/Pods-PhotosSearchAppTests/Pods-PhotosSearchAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		FC142358255194D7008C9CBC /* CellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellExtension.swift; sourceTree = "<group>"; };
 		FC14235D255194F2008C9CBC /* ListExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExtension.swift; sourceTree = "<group>"; };
 		FC1423912551A2EA008C9CBC /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
@@ -133,6 +144,7 @@
 		FCC53D8E255433BA00FA9EA5 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		FCCB5A532550648F005A0057 /* PhotosSearchAPIDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosSearchAPIDataStore.swift; sourceTree = "<group>"; };
 		FCCB5A5B25506A42005A0057 /* APIClient+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Rx.swift"; sourceTree = "<group>"; };
+		FD3EAFEBF683166519D814A2 /* Pods_PhotosSearchApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosSearchApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,12 +152,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC910019254DC0E0001D643B /* Alamofire in Frameworks */,
-				FC91000D254DC08A001D643B /* RxRelay in Frameworks */,
-				FC91000B254DC08A001D643B /* RxSwift in Frameworks */,
-				FC91001F254DC0FB001D643B /* Nuke in Frameworks */,
-				FC910009254DC08A001D643B /* RxCocoa in Frameworks */,
-				FC910013254DC0AD001D643B /* Unio in Frameworks */,
+				FC910019254DC0E0001D643B /* BuildFile in Frameworks */,
+				FC91000D254DC08A001D643B /* BuildFile in Frameworks */,
+				FC91000B254DC08A001D643B /* BuildFile in Frameworks */,
+				FC91001F254DC0FB001D643B /* BuildFile in Frameworks */,
+				FC910009254DC08A001D643B /* BuildFile in Frameworks */,
+				FC910013254DC0AD001D643B /* BuildFile in Frameworks */,
+				182941ACBA42BC1D50444082 /* Pods_PhotosSearchApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB20F4A9AD3E72D87F55B0CA /* Pods_PhotosSearchAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,12 +174,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B47A6130D98B9847234819 /* Pods_PhotosSearchApp_PhotosSearchAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		602D2312DBB7169E1A1512CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				125A8D9833529672E838F512 /* Pods-PhotosSearchApp.debug.xcconfig */,
+				7C97A56B9A764941E7230CD0 /* Pods-PhotosSearchApp.release.xcconfig */,
+				15393303BBA2F63999C10CA1 /* Pods-PhotosSearchApp-PhotosSearchAppUITests.debug.xcconfig */,
+				CA11EEC234A15F6B647DF193 /* Pods-PhotosSearchApp-PhotosSearchAppUITests.release.xcconfig */,
+				C66754973B335486720D01C8 /* Pods-PhotosSearchAppTests.debug.xcconfig */,
+				EBFB348DEF0013C2FDD47F69 /* Pods-PhotosSearchAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A69A05902E6439F20CAAE0DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD3EAFEBF683166519D814A2 /* Pods_PhotosSearchApp.framework */,
+				3CE242700171930CF112782B /* Pods_PhotosSearchApp_PhotosSearchAppUITests.framework */,
+				4459C66B3200857BB1B06BDC /* Pods_PhotosSearchAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FC1423862551A270008C9CBC /* Rx */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,6 +517,8 @@
 				FC91FFB2254DB611001D643B /* PhotosSearchAppTests */,
 				FC91FFBD254DB611001D643B /* PhotosSearchAppUITests */,
 				FC91FF9A254DB60F001D643B /* Products */,
+				602D2312DBB7169E1A1512CB /* Pods */,
+				A69A05902E6439F20CAAE0DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -664,9 +705,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC91FFC3254DB611001D643B /* Build configuration list for PBXNativeTarget "PhotosSearchApp" */;
 			buildPhases = (
+				47AB34229C68E092BFC1B98E /* [CP] Check Pods Manifest.lock */,
 				FC91FF95254DB60F001D643B /* Sources */,
 				FC91FF96254DB60F001D643B /* Frameworks */,
 				FC91FF97254DB60F001D643B /* Resources */,
+				E20A1361F421EC28F2306317 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -674,12 +717,12 @@
 			);
 			name = PhotosSearchApp;
 			packageProductDependencies = (
-				FC910008254DC08A001D643B /* RxCocoa */,
-				FC91000A254DC08A001D643B /* RxSwift */,
-				FC91000C254DC08A001D643B /* RxRelay */,
-				FC910012254DC0AD001D643B /* Unio */,
-				FC910018254DC0E0001D643B /* Alamofire */,
-				FC91001E254DC0FB001D643B /* Nuke */,
+				FC910008254DC08A001D643B /* SwiftPackageProductDependency */,
+				FC91000A254DC08A001D643B /* SwiftPackageProductDependency */,
+				FC91000C254DC08A001D643B /* SwiftPackageProductDependency */,
+				FC910012254DC0AD001D643B /* SwiftPackageProductDependency */,
+				FC910018254DC0E0001D643B /* SwiftPackageProductDependency */,
+				FC91001E254DC0FB001D643B /* SwiftPackageProductDependency */,
 			);
 			productName = PhotosSearchApp;
 			productReference = FC91FF99254DB60F001D643B /* PhotosSearchApp.app */;
@@ -689,6 +732,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC91FFC6254DB611001D643B /* Build configuration list for PBXNativeTarget "PhotosSearchAppTests" */;
 			buildPhases = (
+				DD99FB30001DBD474F986659 /* [CP] Check Pods Manifest.lock */,
 				FC91FFAB254DB611001D643B /* Sources */,
 				FC91FFAC254DB611001D643B /* Frameworks */,
 				FC91FFAD254DB611001D643B /* Resources */,
@@ -707,9 +751,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC91FFC9254DB611001D643B /* Build configuration list for PBXNativeTarget "PhotosSearchAppUITests" */;
 			buildPhases = (
+				44E4BE5B900EBD3ED272D6FD /* [CP] Check Pods Manifest.lock */,
 				FC91FFB6254DB611001D643B /* Sources */,
 				FC91FFB7254DB611001D643B /* Frameworks */,
 				FC91FFB8254DB611001D643B /* Resources */,
+				ED7DFCF001F0F0F94EA665B8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -753,10 +799,10 @@
 			);
 			mainGroup = FC91FF90254DB60F001D643B;
 			packageReferences = (
-				FC910007254DC08A001D643B /* XCRemoteSwiftPackageReference "RxSwift" */,
-				FC910011254DC0AD001D643B /* XCRemoteSwiftPackageReference "Unio" */,
-				FC910017254DC0E0001D643B /* XCRemoteSwiftPackageReference "Alamofire" */,
-				FC91001D254DC0FB001D643B /* XCRemoteSwiftPackageReference "Nuke" */,
+				FC910007254DC08A001D643B /* RemoteSwiftPackageReference */,
+				FC910011254DC0AD001D643B /* RemoteSwiftPackageReference */,
+				FC910017254DC0E0001D643B /* RemoteSwiftPackageReference */,
+				FC91001D254DC0FB001D643B /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = FC91FF9A254DB60F001D643B /* Products */;
 			projectDirPath = "";
@@ -797,6 +843,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44E4BE5B900EBD3ED272D6FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotosSearchApp-PhotosSearchAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47AB34229C68E092BFC1B98E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotosSearchApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD99FB30001DBD474F986659 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotosSearchAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E20A1361F421EC28F2306317 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotosSearchApp/Pods-PhotosSearchApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotosSearchApp/Pods-PhotosSearchApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotosSearchApp/Pods-PhotosSearchApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED7DFCF001F0F0F94EA665B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotosSearchApp-PhotosSearchAppUITests/Pods-PhotosSearchApp-PhotosSearchAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotosSearchApp-PhotosSearchAppUITests/Pods-PhotosSearchApp-PhotosSearchAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotosSearchApp-PhotosSearchAppUITests/Pods-PhotosSearchApp-PhotosSearchAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FC91FF95254DB60F001D643B /* Sources */ = {
@@ -996,6 +1145,7 @@
 		};
 		FC91FFC4254DB611001D643B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 125A8D9833529672E838F512 /* Pods-PhotosSearchApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1016,6 +1166,7 @@
 		};
 		FC91FFC5254DB611001D643B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C97A56B9A764941E7230CD0 /* Pods-PhotosSearchApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1036,6 +1187,7 @@
 		};
 		FC91FFC7254DB611001D643B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C66754973B335486720D01C8 /* Pods-PhotosSearchAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1058,6 +1210,7 @@
 		};
 		FC91FFC8254DB611001D643B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBFB348DEF0013C2FDD47F69 /* Pods-PhotosSearchAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1080,6 +1233,7 @@
 		};
 		FC91FFCA254DB611001D643B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15393303BBA2F63999C10CA1 /* Pods-PhotosSearchApp-PhotosSearchAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1100,6 +1254,7 @@
 		};
 		FC91FFCB254DB611001D643B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA11EEC234A15F6B647DF193 /* Pods-PhotosSearchApp-PhotosSearchAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1160,7 +1315,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FC910007254DC08A001D643B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		FC910007254DC08A001D643B /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
@@ -1168,7 +1323,7 @@
 				minimumVersion = 5.1.1;
 			};
 		};
-		FC910011254DC0AD001D643B /* XCRemoteSwiftPackageReference "Unio" */ = {
+		FC910011254DC0AD001D643B /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/cats-oss/Unio";
 			requirement = {
@@ -1176,7 +1331,7 @@
 				minimumVersion = 0.10.0;
 			};
 		};
-		FC910017254DC0E0001D643B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		FC910017254DC0E0001D643B /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -1184,7 +1339,7 @@
 				minimumVersion = 5.3.0;
 			};
 		};
-		FC91001D254DC0FB001D643B /* XCRemoteSwiftPackageReference "Nuke" */ = {
+		FC91001D254DC0FB001D643B /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke";
 			requirement = {
@@ -1195,34 +1350,34 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FC910008254DC08A001D643B /* RxCocoa */ = {
+		FC910008254DC08A001D643B /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC910007254DC08A001D643B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = FC910007254DC08A001D643B /* RemoteSwiftPackageReference */;
 			productName = RxCocoa;
 		};
-		FC91000A254DC08A001D643B /* RxSwift */ = {
+		FC91000A254DC08A001D643B /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC910007254DC08A001D643B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = FC910007254DC08A001D643B /* RemoteSwiftPackageReference */;
 			productName = RxSwift;
 		};
-		FC91000C254DC08A001D643B /* RxRelay */ = {
+		FC91000C254DC08A001D643B /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC910007254DC08A001D643B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = FC910007254DC08A001D643B /* RemoteSwiftPackageReference */;
 			productName = RxRelay;
 		};
-		FC910012254DC0AD001D643B /* Unio */ = {
+		FC910012254DC0AD001D643B /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC910011254DC0AD001D643B /* XCRemoteSwiftPackageReference "Unio" */;
+			package = FC910011254DC0AD001D643B /* RemoteSwiftPackageReference */;
 			productName = Unio;
 		};
-		FC910018254DC0E0001D643B /* Alamofire */ = {
+		FC910018254DC0E0001D643B /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC910017254DC0E0001D643B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = FC910017254DC0E0001D643B /* RemoteSwiftPackageReference */;
 			productName = Alamofire;
 		};
-		FC91001E254DC0FB001D643B /* Nuke */ = {
+		FC91001E254DC0FB001D643B /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC91001D254DC0FB001D643B /* XCRemoteSwiftPackageReference "Nuke" */;
+			package = FC91001D254DC0FB001D643B /* RemoteSwiftPackageReference */;
 			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */

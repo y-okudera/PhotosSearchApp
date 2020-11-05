@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Keys
 
 enum FlickrRequest {
     
@@ -13,9 +14,11 @@ enum FlickrRequest {
     static let basePath = ""
     
     static func baseParameters(method: String) -> [String: Any] {
+
+        let keys = PhotosSearchAppKeys()
         let parameters = [
             "method": method,
-            "api_key": "",
+            "api_key": keys.flickrAPIKey,
             "format": "json",
             "nojsoncallback" : "1"
         ]
