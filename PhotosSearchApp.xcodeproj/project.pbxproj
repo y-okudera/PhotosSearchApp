@@ -34,12 +34,12 @@
 		FC77D34625514B3800333695 /* SceneDelegate+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC77D34525514B3800333695 /* SceneDelegate+.swift */; };
 		FC77D3502551533600333695 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC77D34F2551533600333695 /* UIImageView+.swift */; };
 		FC77D3632551874100333695 /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC77D3622551874100333695 /* UIAlertController+.swift */; };
-		FC910009254DC08A001D643B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC910008254DC08A001D643B /* SwiftPackageProductDependency */; };
-		FC91000B254DC08A001D643B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC91000A254DC08A001D643B /* SwiftPackageProductDependency */; };
-		FC91000D254DC08A001D643B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC91000C254DC08A001D643B /* SwiftPackageProductDependency */; };
-		FC910013254DC0AD001D643B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC910012254DC0AD001D643B /* SwiftPackageProductDependency */; };
-		FC910019254DC0E0001D643B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC910018254DC0E0001D643B /* SwiftPackageProductDependency */; };
-		FC91001F254DC0FB001D643B /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC91001E254DC0FB001D643B /* SwiftPackageProductDependency */; };
+		FC910009254DC08A001D643B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FC910008254DC08A001D643B /* RxCocoa */; };
+		FC91000B254DC08A001D643B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FC91000A254DC08A001D643B /* RxSwift */; };
+		FC91000D254DC08A001D643B /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = FC91000C254DC08A001D643B /* RxRelay */; };
+		FC910013254DC0AD001D643B /* Unio in Frameworks */ = {isa = PBXBuildFile; productRef = FC910012254DC0AD001D643B /* Unio */; };
+		FC910019254DC0E0001D643B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FC910018254DC0E0001D643B /* Alamofire */; };
+		FC91001F254DC0FB001D643B /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = FC91001E254DC0FB001D643B /* Nuke */; };
 		FC91002F254DC606001D643B /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC91002D254DC606001D643B /* PhotoCollectionViewCell.swift */; };
 		FC910030254DC606001D643B /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC91002E254DC606001D643B /* PhotoCollectionViewCell.xib */; };
 		FC910039254DC80D001D643B /* PhotosSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC910038254DC80D001D643B /* PhotosSearchModel.swift */; };
@@ -152,12 +152,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC910019254DC0E0001D643B /* BuildFile in Frameworks */,
-				FC91000D254DC08A001D643B /* BuildFile in Frameworks */,
-				FC91000B254DC08A001D643B /* BuildFile in Frameworks */,
-				FC91001F254DC0FB001D643B /* BuildFile in Frameworks */,
-				FC910009254DC08A001D643B /* BuildFile in Frameworks */,
-				FC910013254DC0AD001D643B /* BuildFile in Frameworks */,
+				FC910019254DC0E0001D643B /* Alamofire in Frameworks */,
+				FC91000D254DC08A001D643B /* RxRelay in Frameworks */,
+				FC91000B254DC08A001D643B /* RxSwift in Frameworks */,
+				FC91001F254DC0FB001D643B /* Nuke in Frameworks */,
+				FC910009254DC08A001D643B /* RxCocoa in Frameworks */,
+				FC910013254DC0AD001D643B /* Unio in Frameworks */,
 				182941ACBA42BC1D50444082 /* Pods_PhotosSearchApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,7 +191,6 @@
 				C66754973B335486720D01C8 /* Pods-PhotosSearchAppTests.debug.xcconfig */,
 				EBFB348DEF0013C2FDD47F69 /* Pods-PhotosSearchAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -234,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				FC3CFA6E255302C500F3A395 /* Extension */,
-				FC77D33F255146C500333695 /* OptionalType.swift */,
+				FC695D9E2556A10A0074196E /* Rx */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -306,6 +305,14 @@
 				FCA5EE2A255302FD00A3E3C7 /* UIViewController+Swizzling.swift */,
 			);
 			path = MethodSwizzling;
+			sourceTree = "<group>";
+		};
+		FC695D9E2556A10A0074196E /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				FC77D33F255146C500333695 /* OptionalType.swift */,
+			);
+			path = Rx;
 			sourceTree = "<group>";
 		};
 		FC77D2EB2551093700333695 /* Common */ = {
@@ -391,8 +398,8 @@
 				FC1423862551A270008C9CBC /* Rx */,
 				FC77D3622551874100333695 /* UIAlertController+.swift */,
 				FC77D34F2551533600333695 /* UIImageView+.swift */,
-				FC77D32525512C1900333695 /* UIViewController+.swift */,
 				FCC53D8E255433BA00FA9EA5 /* UIView+.swift */,
+				FC77D32525512C1900333695 /* UIViewController+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -717,12 +724,12 @@
 			);
 			name = PhotosSearchApp;
 			packageProductDependencies = (
-				FC910008254DC08A001D643B /* SwiftPackageProductDependency */,
-				FC91000A254DC08A001D643B /* SwiftPackageProductDependency */,
-				FC91000C254DC08A001D643B /* SwiftPackageProductDependency */,
-				FC910012254DC0AD001D643B /* SwiftPackageProductDependency */,
-				FC910018254DC0E0001D643B /* SwiftPackageProductDependency */,
-				FC91001E254DC0FB001D643B /* SwiftPackageProductDependency */,
+				FC910008254DC08A001D643B /* RxCocoa */,
+				FC91000A254DC08A001D643B /* RxSwift */,
+				FC91000C254DC08A001D643B /* RxRelay */,
+				FC910012254DC0AD001D643B /* Unio */,
+				FC910018254DC0E0001D643B /* Alamofire */,
+				FC91001E254DC0FB001D643B /* Nuke */,
 			);
 			productName = PhotosSearchApp;
 			productReference = FC91FF99254DB60F001D643B /* PhotosSearchApp.app */;
@@ -799,10 +806,10 @@
 			);
 			mainGroup = FC91FF90254DB60F001D643B;
 			packageReferences = (
-				FC910007254DC08A001D643B /* RemoteSwiftPackageReference */,
-				FC910011254DC0AD001D643B /* RemoteSwiftPackageReference */,
-				FC910017254DC0E0001D643B /* RemoteSwiftPackageReference */,
-				FC91001D254DC0FB001D643B /* RemoteSwiftPackageReference */,
+				FC910007254DC08A001D643B /* XCRemoteSwiftPackageReference "RxSwift" */,
+				FC910011254DC0AD001D643B /* XCRemoteSwiftPackageReference "Unio" */,
+				FC910017254DC0E0001D643B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FC91001D254DC0FB001D643B /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = FC91FF9A254DB60F001D643B /* Products */;
 			projectDirPath = "";
@@ -1315,7 +1322,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FC910007254DC08A001D643B /* RemoteSwiftPackageReference */ = {
+		FC910007254DC08A001D643B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
@@ -1323,7 +1330,7 @@
 				minimumVersion = 5.1.1;
 			};
 		};
-		FC910011254DC0AD001D643B /* RemoteSwiftPackageReference */ = {
+		FC910011254DC0AD001D643B /* XCRemoteSwiftPackageReference "Unio" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/cats-oss/Unio";
 			requirement = {
@@ -1331,7 +1338,7 @@
 				minimumVersion = 0.10.0;
 			};
 		};
-		FC910017254DC0E0001D643B /* RemoteSwiftPackageReference */ = {
+		FC910017254DC0E0001D643B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -1339,7 +1346,7 @@
 				minimumVersion = 5.3.0;
 			};
 		};
-		FC91001D254DC0FB001D643B /* RemoteSwiftPackageReference */ = {
+		FC91001D254DC0FB001D643B /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke";
 			requirement = {
@@ -1350,34 +1357,34 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FC910008254DC08A001D643B /* SwiftPackageProductDependency */ = {
+		FC910008254DC08A001D643B /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC910007254DC08A001D643B /* RemoteSwiftPackageReference */;
+			package = FC910007254DC08A001D643B /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		FC91000A254DC08A001D643B /* SwiftPackageProductDependency */ = {
+		FC91000A254DC08A001D643B /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC910007254DC08A001D643B /* RemoteSwiftPackageReference */;
+			package = FC910007254DC08A001D643B /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
-		FC91000C254DC08A001D643B /* SwiftPackageProductDependency */ = {
+		FC91000C254DC08A001D643B /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC910007254DC08A001D643B /* RemoteSwiftPackageReference */;
+			package = FC910007254DC08A001D643B /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
 		};
-		FC910012254DC0AD001D643B /* SwiftPackageProductDependency */ = {
+		FC910012254DC0AD001D643B /* Unio */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC910011254DC0AD001D643B /* RemoteSwiftPackageReference */;
+			package = FC910011254DC0AD001D643B /* XCRemoteSwiftPackageReference "Unio" */;
 			productName = Unio;
 		};
-		FC910018254DC0E0001D643B /* SwiftPackageProductDependency */ = {
+		FC910018254DC0E0001D643B /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC910017254DC0E0001D643B /* RemoteSwiftPackageReference */;
+			package = FC910017254DC0E0001D643B /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		FC91001E254DC0FB001D643B /* SwiftPackageProductDependency */ = {
+		FC91001E254DC0FB001D643B /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC91001D254DC0FB001D643B /* RemoteSwiftPackageReference */;
+			package = FC91001D254DC0FB001D643B /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */
