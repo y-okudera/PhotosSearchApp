@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// エリアLマスタ取得API
+/// Flickr写真検索API
 final class PhotosSearchRequest: APIRequestable {
     
     typealias Response = PhotosSearchResponse
