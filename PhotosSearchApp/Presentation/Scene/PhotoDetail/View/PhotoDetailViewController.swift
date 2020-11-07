@@ -11,6 +11,7 @@ import RxSwift
 
 final class PhotoDetailViewController: UIViewController, ViewProtocol {
 
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var descriptionTextView: UITextView!
     @IBOutlet private weak var closeButton: UIButton!
@@ -40,8 +41,8 @@ final class PhotoDetailViewController: UIViewController, ViewProtocol {
 
         self.viewModel.output.photo
             .bind(onNext: { [weak self] photo in
-                self?.navigationItem.title = photo.title
-                self?.descriptionTextView.text = photo.description
+                self?.titleLabel.text = photo.title.isEmpty ? "No title" : photo.title
+                self?.descriptionTextView.text = photo.description.isEmpty ? "No description" : photo.description
                 self?.imageView.loadImage(urlString: photo.imageUrlString)
             })
             .disposed(by: self.disposeBag)
