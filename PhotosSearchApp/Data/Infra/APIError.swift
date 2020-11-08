@@ -11,16 +11,10 @@ import Foundation
 enum APIError<T: APIRequestable>: Error {
     /// キャンセル
     case cancelled
-    /// 接続エラー(オフライン)
+    /// 通信失敗
     case connectionError
-    /// タイムアウト
-    case timedOut
-    /// レスポンスのデコード失敗
-    case decodeError
     /// エラーレスポンス
     case errorResponse(T.ErrorResponse)
-    /// 無効なレスポンス
-    case invalidResponse
     /// その他
     case others(error: Error)
 }
@@ -30,10 +24,8 @@ extension APIError {
         if let data = responseData, afError.isResponseSerializationError {
             if let errorResponse = request.decode(errorResponseData: data) {
                 self = .errorResponse(errorResponse)
-            } else {
-                self = .decodeError
+                return
             }
-            return
         }
 
         if afError.isExplicitlyCancelledError {
@@ -43,11 +35,8 @@ extension APIError {
 
         if case .sessionTaskFailed(error: let error) = afError, let urlError = error as? URLError {
             switch urlError.code {
-            case .notConnectedToInternet, .networkConnectionLost:
+            case .notConnectedToInternet, .networkConnectionLost, .timedOut:
                 self = .connectionError
-                return
-            case .timedOut:
-                self = .timedOut
                 return
             default:
                 break
@@ -57,25 +46,57 @@ extension APIError {
     }
 }
 
-extension APIError: LocalizedError {
+extension APIError: AlertableError {
 
-    var errorDescription: String? {
+    private typealias ErrorResponseAlertElements = T.ErrorResponse.AlertElements
+
+    var title: String {
         switch self {
         case .cancelled:
-            return "APIError cancelled"
+            return "API Error"
         case .connectionError:
-            return "APIError connectionError"
-        case .timedOut:
-            return "APIError timedOut"
-        case .decodeError:
-            return "APIError decodeError"
-        case .errorResponse:
-            // The API error message is defined in the error response.
+            return "通信エラー"
+        case .errorResponse(let errorResponse):
+            return self.title(from: errorResponse)
+        case .others(error: let error):
+            return (error as NSError).localizedRecoverySuggestion ?? "API Error"
+        }
+    }
+
+    var message: String {
+        switch self {
+        case .cancelled:
+            return "キャンセルされました。"
+        case .connectionError:
+            return "通信に失敗しました。通信環境の良い場所で再度お試しください。"
+        case .errorResponse(let errorResponse):
+            return self.message(from: errorResponse)
+        case .others(error: let error):
+            return error.localizedDescription
+        }
+    }
+
+    private func title(from errorResponse: T.ErrorResponse) -> String {
+        guard let alertableErrorResponse = self.convert(from: errorResponse) else {
+            return "エラー"
+        }
+        return ErrorResponseAlertElements.title(errorResponse: alertableErrorResponse)
+    }
+
+    private func message(from errorResponse: T.ErrorResponse) -> String {
+        guard let alertableErrorResponse = self.convert(from: errorResponse) else {
+            return "エラーが発生しました。"
+        }
+        return ErrorResponseAlertElements.message(errorResponse: alertableErrorResponse)
+    }
+
+    private func convert(from errorResponse: T.ErrorResponse) -> ErrorResponseAlertElements.ErrorResponse? {
+        if let alertableErrorResponse = errorResponse as? ErrorResponseAlertElements.ErrorResponse {
+            return alertableErrorResponse
+        } else {
+            let expectedType = String(describing: T.ErrorResponse.AlertElements.ErrorResponse.self)
+            assertionFailure("Illegal argument exception. (expect type is \(expectedType))")
             return nil
-        case .invalidResponse:
-            return "APIError invalidResponse"
-        case .others:
-            return "APIError others"
         }
     }
 }

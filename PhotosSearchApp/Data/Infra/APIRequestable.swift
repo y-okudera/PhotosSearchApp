@@ -12,7 +12,7 @@ import Foundation
 protocol APIRequestable: AnyObject {
 
     associatedtype Response: Decodable
-    associatedtype ErrorResponse: Decodable
+    associatedtype ErrorResponse: ErrorResponseProtocol
 
     var baseURL: URL { get }
     var method: HTTPMethod { get }
