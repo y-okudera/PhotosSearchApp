@@ -24,7 +24,7 @@ final class APIClient {
     func request<T: APIRequestable>(_ request: T,
                                     queue: DispatchQueue = .main,
                                     decoder: DataDecoder = defaultDataDecoder(),
-                                    completion: @escaping(Swift.Result<T.Response, APIError<T>>) -> Void) {
+                                    completion: @escaping(Swift.Result<T.Response, APIError>) -> Void) {
 
         AF.request(request.makeURLRequest())
             .validate(statusCode: 200..<300)

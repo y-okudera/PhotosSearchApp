@@ -12,7 +12,7 @@ import Foundation
 protocol APIRequestable: AnyObject {
 
     associatedtype Response: Decodable
-    associatedtype ErrorResponse: ErrorResponseProtocol
+    associatedtype ErrorResponse: Decodable
 
     var baseURL: URL { get }
     var method: HTTPMethod { get }
@@ -24,8 +24,9 @@ protocol APIRequestable: AnyObject {
     var cachePolicy: URLRequest.CachePolicy { get }
     var allowsCellularAccess: Bool { get }
 
-    func decode(errorResponseData: Data) -> ErrorResponse?
     func makeURLRequest() -> URLRequest
+    func decode(errorResponseData: Data) -> ErrorResponse?
+    func convert(errorResponse: ErrorResponse) -> APIErrorResponse
 }
 
 // MARK: - Default implementation
@@ -68,18 +69,6 @@ extension APIRequestable {
         return true
     }
 
-    func decode(errorResponseData: Data) -> ErrorResponse? {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        do {
-            let errorResponse = try decoder.decode(ErrorResponse.self, from: errorResponseData)
-            return errorResponse
-        } catch {
-            print("ErrorResponse decode error:\(error)")
-            return nil
-        }
-    }
-
     func makeURLRequest() -> URLRequest {
         let endPoint = URL(string: baseURL.absoluteString + path)!
         var urlRequest = URLRequest(url: endPoint)
@@ -95,6 +84,18 @@ extension APIRequestable {
             return urlRequest.jsonEncoding(parameters: parameters)!
         case .urlEncoding:
             return urlRequest.urlEncoding(parameters: parameters)!
+        }
+    }
+
+    func decode(errorResponseData: Data) -> ErrorResponse? {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        do {
+            let errorResponse = try decoder.decode(ErrorResponse.self, from: errorResponseData)
+            return errorResponse
+        } catch {
+            print("ErrorResponse decode error:\(error)")
+            return nil
         }
     }
 }

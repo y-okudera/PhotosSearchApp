@@ -15,10 +15,10 @@ extension Reactive where Base: APIClient {
     
     /// API Request
     func request<T: APIRequestable>(_ request: T,
-                                    onlyViaWiFi: Bool = false,
                                     queue: DispatchQueue = .main,
                                     decoder: DataDecoder = Base.defaultDataDecoder()) -> Single<T.Response> {
 
+        let onlyViaWiFi = !request.allowsCellularAccess
         return NetworkManager.rx.reachability(onlyViaWiFi: onlyViaWiFi)
             .catchError { error -> Single<Void> in
                 return .error(error)

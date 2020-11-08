@@ -21,7 +21,10 @@
 		FC1423E92551CBF8008C9CBC /* PhotoDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1423E42551CBF7008C9CBC /* PhotoDetailBuilder.swift */; };
 		FC1423EE2551CE1F008C9CBC /* TransitToPhotoDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1423ED2551CE1F008C9CBC /* TransitToPhotoDetailWireframe.swift */; };
 		FC1423F62551D53E008C9CBC /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1423F52551D53E008C9CBC /* UIViewController+Rx.swift */; };
-		FC5355D52557B82E000605ED /* ErrorResponseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5355D42557B82E000605ED /* ErrorResponseProtocol.swift */; };
+		FC5355E02557C9AB000605ED /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5355DF2557C9AB000605ED /* APIErrorResponse.swift */; };
+		FC5355EC2557D496000605ED /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5355EB2557D496000605ED /* AppError.swift */; };
+		FC5355F12557E1C2000605ED /* APIError+Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5355F02557E1C2000605ED /* APIError+Alertable.swift */; };
+		FC5355F62557E1D6000605ED /* NetworkReachabilityError+Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5355F52557E1D6000605ED /* NetworkReachabilityError+Alertable.swift */; };
 		FC695DAD2556F1640074196E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC695DAC2556F1640074196E /* NetworkManager.swift */; };
 		FC695DB525570B450074196E /* NetworkReachabilityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC695DB425570B450074196E /* NetworkReachabilityError.swift */; };
 		FC77D2ED2551094400333695 /* FlickrRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC77D2EC2551094400333695 /* FlickrRequest.swift */; };
@@ -105,7 +108,10 @@
 		FC1423E42551CBF7008C9CBC /* PhotoDetailBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailBuilder.swift; sourceTree = "<group>"; };
 		FC1423ED2551CE1F008C9CBC /* TransitToPhotoDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitToPhotoDetailWireframe.swift; sourceTree = "<group>"; };
 		FC1423F52551D53E008C9CBC /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
-		FC5355D42557B82E000605ED /* ErrorResponseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponseProtocol.swift; sourceTree = "<group>"; };
+		FC5355DF2557C9AB000605ED /* APIErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorResponse.swift; sourceTree = "<group>"; };
+		FC5355EB2557D496000605ED /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		FC5355F02557E1C2000605ED /* APIError+Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIError+Alertable.swift"; sourceTree = "<group>"; };
+		FC5355F52557E1D6000605ED /* NetworkReachabilityError+Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkReachabilityError+Alertable.swift"; sourceTree = "<group>"; };
 		FC695DAC2556F1640074196E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FC695DB425570B450074196E /* NetworkReachabilityError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityError.swift; sourceTree = "<group>"; };
 		FC77D2EC2551094400333695 /* FlickrRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrRequest.swift; sourceTree = "<group>"; };
@@ -313,6 +319,16 @@
 			path = MethodSwizzling;
 			sourceTree = "<group>";
 		};
+		FC5355EA2557D48E000605ED /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				FC5355EB2557D496000605ED /* AppError.swift */,
+				FC5355F02557E1C2000605ED /* APIError+Alertable.swift */,
+				FC5355F52557E1D6000605ED /* NetworkReachabilityError+Alertable.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		FC695D9E2556A10A0074196E /* Rx */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +397,7 @@
 		FC77D32425512BB200333695 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				FC5355EA2557D48E000605ED /* Error */,
 				FC14239C2551B8CB008C9CBC /* View */,
 				FC77D35A25517EE500333695 /* Extension */,
 			);
@@ -509,10 +526,10 @@
 			children = (
 				FC910054254DCC0E001D643B /* APIClient.swift */,
 				FCCB5A5B25506A42005A0057 /* APIClient+Rx.swift */,
+				FC5355DF2557C9AB000605ED /* APIErrorResponse.swift */,
 				FC91004F254DCBD9001D643B /* APIError.swift */,
 				FC91004A254DCBC0001D643B /* APIRequestable.swift */,
 				FC910045254DCBA9001D643B /* EncodingType.swift */,
-				FC5355D42557B82E000605ED /* ErrorResponseProtocol.swift */,
 				FC695DAB2556F15E0074196E /* NetworkManager */,
 			);
 			path = Infra;
@@ -981,17 +998,20 @@
 				FC77D320255122A700333695 /* PhotosSearchWireframe.swift in Sources */,
 				FC1423E82551CBF8008C9CBC /* PhotoDetailViewController.swift in Sources */,
 				FCC53D8F255433BA00FA9EA5 /* UIView+.swift in Sources */,
+				FC5355F12557E1C2000605ED /* APIError+Alertable.swift in Sources */,
 				FC910046254DCBA9001D643B /* EncodingType.swift in Sources */,
 				FC14239E2551B8D6008C9CBC /* ErrorAlert.swift in Sources */,
 				FC77D2ED2551094400333695 /* FlickrRequest.swift in Sources */,
+				FC5355EC2557D496000605ED /* AppError.swift in Sources */,
 				FC77D32E25513A1600333695 /* ViewModelProtocol.swift in Sources */,
 				FC91FFA1254DB60F001D643B /* PhotosSearchViewController.swift in Sources */,
 				FCCB5A5C25506A42005A0057 /* APIClient+Rx.swift in Sources */,
+				FC5355F62557E1D6000605ED /* NetworkReachabilityError+Alertable.swift in Sources */,
 				FC77D33525513FE200333695 /* ViewProtocol.swift in Sources */,
 				FC695DB525570B450074196E /* NetworkReachabilityError.swift in Sources */,
-				FC5355D52557B82E000605ED /* ErrorResponseProtocol.swift in Sources */,
 				FC1423EE2551CE1F008C9CBC /* TransitToPhotoDetailWireframe.swift in Sources */,
 				FC1423E92551CBF8008C9CBC /* PhotoDetailBuilder.swift in Sources */,
+				FC5355E02557C9AB000605ED /* APIErrorResponse.swift in Sources */,
 				FC142359255194D7008C9CBC /* CellExtension.swift in Sources */,
 				FC91005D254DDEC9001D643B /* PhotosSearchRequest.swift in Sources */,
 				FC77D32625512C1900333695 /* UIViewController+.swift in Sources */,

@@ -70,9 +70,35 @@ final class PhotosSearchViewController: UIViewController, ViewProtocol, ErrorAle
             })
             .disposed(by: self.disposeBag)
 
-        self.viewModel.output.error
+        self.viewModel.output.initialRequestError
+            .map { AppError(error: $0) }
             .bind(onNext: { [weak self] error in
-                self?.showErrorAlert(error)
+                if error.isRetryable {
+                    self?.showRetryableErrorAlert(error, retryAction: { [weak self] _ in
+                        guard let `self` = self, let searchText = self.searchBar.text else {
+                            return
+                        }
+                        self.viewModel.input.searchButtonTapped(searchText)
+                        self.searchBar.endEditing(true)
+                    })
+                } else {
+                    self?.showErrorAlert(error)
+                }
+
+            })
+            .disposed(by: self.disposeBag)
+
+        self.viewModel.output.additionalRequestError
+            .map { AppError(error: $0) }
+            .bind(onNext: { [weak self] error in
+                if error.isRetryable {
+                    self?.showRetryableErrorAlert(error, retryAction: { [weak self] _ in
+                        self?.viewModel.input.reachedBottom(())
+                        self?.searchBar.endEditing(true)
+                    })
+                } else {
+                    self?.showErrorAlert(error)
+                }
             })
             .disposed(by: self.disposeBag)
     }

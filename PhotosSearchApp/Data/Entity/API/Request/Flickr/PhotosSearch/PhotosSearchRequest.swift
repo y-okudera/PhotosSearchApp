@@ -33,4 +33,8 @@ final class PhotosSearchRequest: APIRequestable {
         self.page = page
         self.perPage = perPage
     }
+
+    func convert(errorResponse: ErrorResponse) -> APIErrorResponse {
+        return .init(code: errorResponse.code, title: "Flickr Error", message: "code: \(errorResponse.code)\n" + errorResponse.message)
+    }
 }

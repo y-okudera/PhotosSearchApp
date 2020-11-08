@@ -52,7 +52,7 @@ extension UIViewController {
     ///   - message: メッセージ
     ///   - retryAction: リトライボタンタップ時のアクション
     ///   - cancelAction: キャンセルボタンタップ時のアクション
-    func retryAlert(title: String = "", message: String, retryAction: AlertActionHandler?, cancelAction: AlertActionHandler? = nil) {
+    func showRetryAlert(title: String = "", message: String, retryAction: AlertActionHandler?, cancelAction: AlertActionHandler? = nil) {
         let alert = UIAlertController.make(
             title: title,
             message: message,

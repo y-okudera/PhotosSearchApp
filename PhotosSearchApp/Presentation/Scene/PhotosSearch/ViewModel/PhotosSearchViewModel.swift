@@ -35,7 +35,8 @@ final class PhotosSearchViewModel: UnioStream<PhotosSearchViewModel>, PhotosSear
         let needsScrollingToTop: BehaviorRelay<Bool>
         let photos: BehaviorRelay<[PhotosSearchModel.Photo]>
         let currentPage: BehaviorRelay<Int>
-        let error: Observable<Error>
+        let initialRequestError: Observable<Error>
+        let additionalRequestError: Observable<Error>
     }
 
     struct State: StateType {
@@ -48,7 +49,8 @@ final class PhotosSearchViewModel: UnioStream<PhotosSearchViewModel>, PhotosSear
         let pages = BehaviorRelay<Int>(value: 0)
         /// 取得した写真
         let photos = BehaviorRelay<[PhotosSearchModel.Photo]>(value: [])
-        let error = BehaviorRelay<Error?>(value: nil)
+        let initialRequestError = BehaviorRelay<Error?>(value: nil)
+        let additionalRequestError = BehaviorRelay<Error?>(value: nil)
     }
 
     struct Extra: ExtraType {
@@ -79,7 +81,7 @@ final class PhotosSearchViewModel: UnioStream<PhotosSearchViewModel>, PhotosSear
                         state.photos.accept(model.photos)
                         print("写真検索結果(初回読み込み) pages", model.pages, "page", model.page, "photos", state.photos.value.count)
                     }, onError: { error in
-                        state.error.accept(error)
+                        state.initialRequestError.accept(error)
                     })
                     .disposed(by: disposeBag)
             })
@@ -99,7 +101,7 @@ final class PhotosSearchViewModel: UnioStream<PhotosSearchViewModel>, PhotosSear
                         state.photos.accept(state.photos.value + model.photos)
                         print("写真検索結果(追加読み込み) pages", model.pages, "page", model.page, "photos", state.photos.value.count)
                     }, onError: { error in
-                        state.error.accept(error)
+                        state.additionalRequestError.accept(error)
                     })
                     .disposed(by: disposeBag)
             })
@@ -117,7 +119,8 @@ final class PhotosSearchViewModel: UnioStream<PhotosSearchViewModel>, PhotosSear
             needsScrollingToTop: state.needsScrollingToTop,
             photos: state.photos,
             currentPage: state.page,
-            error: state.error.filterNil()
+            initialRequestError: state.initialRequestError.filterNil(),
+            additionalRequestError: state.additionalRequestError.filterNil()
         )
     }
 }

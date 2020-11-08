@@ -15,19 +15,43 @@ protocol AlertableError: Error {
 protocol ErrorAlert {}
 
 extension ErrorAlert where Self: UIViewController {
-    func showErrorAlert(_ error: Error) {
+
+    /// OKボタンで閉じるのみのエラーダイアログを表示
+    /// - Parameter appError: エラーオブジェクト
+    func showErrorAlert(_ appError: AppError) {
         // スタックトレースを出力する
         self.displayStackSymbols()
 
-        print("Error", error)
+        let underlyingError = appError.underlyingError
+        print("Error", underlyingError)
 
-        if let alertableError = error as? AlertableError {
+        if let alertableError = underlyingError as? AlertableError {
             self.showAlert(title: alertableError.title, message: alertableError.message)
             return
         }
 
         // 特定のエラーではない場合は、エラーオブジェクトの内容を表示する
-        self.showDefaultErrorAlert(error: error as NSError)
+        self.showDefaultErrorAlert(error: underlyingError as NSError)
+    }
+
+    /// リトライ可能なエラーダイアログを表示
+    /// - Parameters:
+    ///   - appError: エラーオブジェクト
+    ///   - retryAction: リトライボタンタップ時のアクション
+    func showRetryableErrorAlert(_ appError: AppError, retryAction: @escaping(AlertActionHandler)) {
+        // スタックトレースを出力する
+        self.displayStackSymbols()
+
+        let underlyingError = appError.underlyingError
+        print("Error", underlyingError)
+
+        if let alertableError = underlyingError as? AlertableError {
+            self.showRetryAlert(title: alertableError.title, message: alertableError.message, retryAction: retryAction)
+            return
+        }
+
+        // 特定のエラーではない場合は、エラーオブジェクトの内容を表示する。リトライはさせない。
+        self.showDefaultErrorAlert(error: underlyingError as NSError)
     }
 
     private func showDefaultErrorAlert(error: NSError) {
