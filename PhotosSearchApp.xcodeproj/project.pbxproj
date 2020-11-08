@@ -28,6 +28,8 @@
 		FC5355FC2557E4EE000605ED /* ObjcExceptionBridging in Frameworks */ = {isa = PBXBuildFile; productRef = FC5355FB2557E4EE000605ED /* ObjcExceptionBridging */; };
 		FC5355FE2557E4EE000605ED /* XCGLogger in Frameworks */ = {isa = PBXBuildFile; productRef = FC5355FD2557E4EE000605ED /* XCGLogger */; };
 		FC5356042557E527000605ED /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5356032557E527000605ED /* Logger.swift */; };
+		FC5356152557F44D000605ED /* Action in Frameworks */ = {isa = PBXBuildFile; productRef = FC5356142557F44D000605ED /* Action */; };
+		FC5356202557F9BB000605ED /* Action+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53561F2557F9BB000605ED /* Action+.swift */; };
 		FC695DAD2556F1640074196E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC695DAC2556F1640074196E /* NetworkManager.swift */; };
 		FC695DB525570B450074196E /* NetworkReachabilityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC695DB425570B450074196E /* NetworkReachabilityError.swift */; };
 		FC77D2ED2551094400333695 /* FlickrRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC77D2EC2551094400333695 /* FlickrRequest.swift */; };
@@ -116,6 +118,7 @@
 		FC5355F02557E1C2000605ED /* APIError+Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIError+Alertable.swift"; sourceTree = "<group>"; };
 		FC5355F52557E1D6000605ED /* NetworkReachabilityError+Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkReachabilityError+Alertable.swift"; sourceTree = "<group>"; };
 		FC5356032557E527000605ED /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		FC53561F2557F9BB000605ED /* Action+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Action+.swift"; sourceTree = "<group>"; };
 		FC695DAC2556F1640074196E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FC695DB425570B450074196E /* NetworkReachabilityError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityError.swift; sourceTree = "<group>"; };
 		FC77D2EC2551094400333695 /* FlickrRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrRequest.swift; sourceTree = "<group>"; };
@@ -168,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC5356152557F44D000605ED /* Action in Frameworks */,
 				FC5355FC2557E4EE000605ED /* ObjcExceptionBridging in Frameworks */,
 				FC910019254DC0E0001D643B /* Alamofire in Frameworks */,
 				FC91000D254DC08A001D643B /* RxRelay in Frameworks */,
@@ -369,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				FC77D33F255146C500333695 /* OptionalType.swift */,
+				FC53561F2557F9BB000605ED /* Action+.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -797,6 +802,7 @@
 				FC91001E254DC0FB001D643B /* Nuke */,
 				FC5355FB2557E4EE000605ED /* ObjcExceptionBridging */,
 				FC5355FD2557E4EE000605ED /* XCGLogger */,
+				FC5356142557F44D000605ED /* Action */,
 			);
 			productName = PhotosSearchApp;
 			productReference = FC91FF99254DB60F001D643B /* PhotosSearchApp.app */;
@@ -878,6 +884,7 @@
 				FC910017254DC0E0001D643B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				FC91001D254DC0FB001D643B /* XCRemoteSwiftPackageReference "Nuke" */,
 				FC5355FA2557E4EE000605ED /* XCRemoteSwiftPackageReference "XCGLogger" */,
+				FC5356132557F44D000605ED /* XCRemoteSwiftPackageReference "Action" */,
 			);
 			productRefGroup = FC91FF9A254DB60F001D643B /* Products */;
 			projectDirPath = "";
@@ -1060,6 +1067,7 @@
 				FC1423E52551CBF8008C9CBC /* PhotoDetailViewModel.swift in Sources */,
 				FC910039254DC80D001D643B /* PhotosSearchModel.swift in Sources */,
 				FC77D3502551533600333695 /* UIImageView+.swift in Sources */,
+				FC5356202557F9BB000605ED /* Action+.swift in Sources */,
 				FCA5EE2B255302FD00A3E3C7 /* UIViewController+Swizzling.swift in Sources */,
 				FC14235E255194F2008C9CBC /* ListExtension.swift in Sources */,
 				FCCB5A542550648F005A0057 /* PhotosSearchAPIDataStore.swift in Sources */,
@@ -1405,6 +1413,14 @@
 				minimumVersion = 7.0.1;
 			};
 		};
+		FC5356132557F44D000605ED /* XCRemoteSwiftPackageReference "Action" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/Action";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
 		FC910007254DC08A001D643B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -1449,6 +1465,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FC5355FA2557E4EE000605ED /* XCRemoteSwiftPackageReference "XCGLogger" */;
 			productName = XCGLogger;
+		};
+		FC5356142557F44D000605ED /* Action */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC5356132557F44D000605ED /* XCRemoteSwiftPackageReference "Action" */;
+			productName = Action;
 		};
 		FC910008254DC08A001D643B /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
