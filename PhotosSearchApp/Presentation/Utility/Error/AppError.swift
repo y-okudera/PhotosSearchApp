@@ -20,6 +20,10 @@ enum AppError: Error {
         } else {
             self = .unknown(error)
         }
+
+        log?.error("underlyingError: \(self.underlyingError)")
+        // スタックトレースを出力する
+        printStackTrace()
     }
 }
 

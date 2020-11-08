@@ -29,7 +29,7 @@ final class APIClient {
         AF.request(request.makeURLRequest())
             .validate(statusCode: 200..<300)
             .responseDecodable(of: T.Response.self, queue: queue, decoder: decoder) { dataResponse in
-                print("【API Response Description】\n\(dataResponse.debugDescription)")
+                log?.debug("【API Response Description】\n\(dataResponse.debugDescription)")
 
                 switch dataResponse.result {
                 case .success(let response):

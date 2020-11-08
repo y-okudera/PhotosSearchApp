@@ -28,7 +28,7 @@ extension UIImageView {
             case .success(_):
                 break
             case .failure(let error):
-                print("Image load error:\(error)")
+                log?.error("Image load error: \(error)")
                 self?.image = defaultImage
             }
             self?.backgroundColor = prevBackgroundColor

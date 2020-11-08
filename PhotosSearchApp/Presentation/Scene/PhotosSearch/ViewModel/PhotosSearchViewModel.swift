@@ -79,7 +79,7 @@ final class PhotosSearchViewModel: UnioStream<PhotosSearchViewModel>, PhotosSear
                         state.pages.accept(model.pages)
                         state.page.accept(model.page)
                         state.photos.accept(model.photos)
-                        print("写真検索結果(初回読み込み) pages", model.pages, "page", model.page, "photos", state.photos.value.count)
+                        log?.debug("写真検索結果(初回読み込み) pages: \(model.pages) page: \(model.page) photos: \(state.photos.value.count)")
                     }, onError: { error in
                         state.initialRequestError.accept(error)
                     })
@@ -99,7 +99,7 @@ final class PhotosSearchViewModel: UnioStream<PhotosSearchViewModel>, PhotosSear
                         state.pages.accept(model.pages)
                         state.page.accept(model.page)
                         state.photos.accept(state.photos.value + model.photos)
-                        print("写真検索結果(追加読み込み) pages", model.pages, "page", model.page, "photos", state.photos.value.count)
+                        log?.debug("写真検索結果(追加読み込み) pages: \(model.pages) page: \(model.page) photos: \(state.photos.value.count)")
                     }, onError: { error in
                         state.additionalRequestError.accept(error)
                     })
@@ -110,7 +110,7 @@ final class PhotosSearchViewModel: UnioStream<PhotosSearchViewModel>, PhotosSear
         input.selectedPhoto
             .bind(onNext: { selectedPhoto in
                 extra.wireframe.presentPhotoDetail(photo: selectedPhoto) {
-                    print("PresentPhotoDetail completion")
+                    log?.debug("PresentPhotoDetail completion")
                 }
             })
             .disposed(by: disposeBag)

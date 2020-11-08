@@ -19,12 +19,7 @@ extension ErrorAlert where Self: UIViewController {
     /// OKボタンで閉じるのみのエラーダイアログを表示
     /// - Parameter appError: エラーオブジェクト
     func showErrorAlert(_ appError: AppError) {
-        // スタックトレースを出力する
-        self.displayStackSymbols()
-
         let underlyingError = appError.underlyingError
-        print("Error", underlyingError)
-
         if let alertableError = underlyingError as? AlertableError {
             self.showAlert(title: alertableError.title, message: alertableError.message)
             return
@@ -39,12 +34,7 @@ extension ErrorAlert where Self: UIViewController {
     ///   - appError: エラーオブジェクト
     ///   - retryAction: リトライボタンタップ時のアクション
     func showRetryableErrorAlert(_ appError: AppError, retryAction: @escaping(AlertActionHandler)) {
-        // スタックトレースを出力する
-        self.displayStackSymbols()
-
         let underlyingError = appError.underlyingError
-        print("Error", underlyingError)
-
         if let alertableError = underlyingError as? AlertableError {
             self.showRetryAlert(title: alertableError.title, message: alertableError.message, retryAction: retryAction)
             return
@@ -55,7 +45,7 @@ extension ErrorAlert where Self: UIViewController {
     }
 
     private func showDefaultErrorAlert(error: NSError) {
-        print("NSError", error)
+        log?.error("NSError: \(error)")
         var title = "Error"
         var message = error.localizedDescription
         var buttonTitle = "OK"
@@ -74,14 +64,5 @@ extension ErrorAlert where Self: UIViewController {
 
         let alert = UIAlertController.make(title: title, message: message, positiveButtonTitle: buttonTitle)
         self.present(alert, animated: true)
-    }
-
-    /// スタックトレースをコンソールに出力する
-    private func displayStackSymbols() {
-        print("【Stack symbols】---")
-        Thread.callStackSymbols.forEach {
-            print($0)
-        }
-        print("---【Stack symbols】")
     }
 }

@@ -94,7 +94,7 @@ extension APIRequestable {
             let errorResponse = try decoder.decode(ErrorResponse.self, from: errorResponseData)
             return errorResponse
         } catch {
-            print("ErrorResponse decode error:\(error)")
+            log?.error("ErrorResponse decode error:\(error)")
             return nil
         }
     }

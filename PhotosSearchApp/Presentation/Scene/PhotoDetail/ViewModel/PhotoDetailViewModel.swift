@@ -57,10 +57,10 @@ final class PhotoDetailViewModel: UnioStream<PhotoDetailViewModel>, PhotoDetailV
 
         input.tappedClose
             .bind(onNext: {
-                print("閉じるボタンタップ")
+                log?.debug("閉じるボタンタップ")
                 extra.wireframe.dismiss {
                     // スワイプで閉じられた場合は、このcompletionは呼ばれない
-                    print("Dismiss completion")
+                    log?.debug("Dismiss completion")
                 }
             })
             .disposed(by: disposeBag)

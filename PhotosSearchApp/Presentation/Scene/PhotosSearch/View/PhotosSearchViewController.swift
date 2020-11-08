@@ -140,10 +140,10 @@ extension PhotosSearchViewController: UICollectionViewDelegateFlowLayout {
 extension PhotosSearchViewController: UIAdaptivePresentationControllerDelegate {
 
     func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
-        print("PhotosSearchViewController.presentationControllerWillDismiss")
+        log?.debug("PhotosSearchViewController.presentationControllerWillDismiss")
     }
 
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
-        print("PhotosSearchViewController.presentationControllerDidDismiss")
+        log?.debug("PhotosSearchViewController.presentationControllerDidDismiss")
     }
 }
