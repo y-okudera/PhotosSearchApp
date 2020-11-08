@@ -41,8 +41,8 @@ final class PhotoDetailViewController: UIViewController, ViewProtocol {
 
         self.viewModel.output.photo
             .bind(onNext: { [weak self] photo in
-                self?.titleLabel.text = photo.title.isEmpty ? "No title" : photo.title
-                self?.descriptionTextView.text = photo.description.isEmpty ? "No description" : photo.description
+                self?.titleLabel.text = photo.title
+                self?.descriptionTextView.text = photo.description
                 self?.imageView.loadImage(urlString: photo.imageUrlString)
             })
             .disposed(by: self.disposeBag)

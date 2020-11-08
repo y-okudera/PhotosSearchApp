@@ -35,8 +35,10 @@ extension PhotosSearchModel {
         let imageUrlString: String
 
         init(photo: PhotosSearchResponse.Photo) {
-            self.title = photo.title
-            self.description = photo.description?._content ?? ""
+            self.title = photo.title.isEmpty ? "No title" : photo.title
+
+            let description = photo.description?._content ?? ""
+            self.description = description.isEmpty ? "No description" : description
 
             /*
              Photo Image URLs
